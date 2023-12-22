@@ -9,9 +9,12 @@ const AuthRouter = require("./routes/Auth");
 const CartRouter = require("./routes/Cart");
 const OrderRouter = require("./routes/Order");
 const cors = require("cors");
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT;
+
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 mongoose
   .connect(process.env.MONGODB_URL)
