@@ -23,6 +23,7 @@ mongoose
 app.use(
   cors({
     exposedHeaders: ["X-Total-Count"],
+    origin:"*"
   })
 );
 app.use(express.json());
