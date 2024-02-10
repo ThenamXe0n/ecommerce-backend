@@ -21,10 +21,7 @@ mongoose
   .then(console.log("db is connected"));
 
 app.use(
-  cors({
-    exposedHeaders: ["X-Total-Count"],
-    origin:"*"
-  })
+  cors({ })
 );
 app.use(express.json());
 app.use("/products", productRoutes);
