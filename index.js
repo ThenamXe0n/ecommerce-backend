@@ -24,7 +24,7 @@ app.use(
   cors()
 );
 app.use((req,res,next)=>{
-res.setHeaders("Access-Control-Allow-Origin","*");
+res.setHeaders("Access-Control-Allow-Origin","/(.*)");
 res.setHeaders("Access-Control-Allow-Methods","GET,POST,PUT,DELETE");
 res.setHeaders("Access-Control-Allow-Headers","X-Requested-With, Content-type,Origin,Accept");
 next();
