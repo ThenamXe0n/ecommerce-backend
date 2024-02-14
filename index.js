@@ -21,7 +21,7 @@ mongoose
   .then(console.log("db is connected"));
 
 app.use(
-  cors({res.setHeaders("Access-Control-Allow-Origin","/(.*)");})
+  cors({})
 );
 
 app.use(express.json());
