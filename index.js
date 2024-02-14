@@ -21,9 +21,10 @@ mongoose
   .then(console.log("db is connected"));
 
 app.use(
-  cors({origin:'https://e-store-roan.vercel.app'})
+  cors()
 );
 app.use((req,res,next)=>{
+res.setHeaders("Access-Control-Allow-Origin","*");
 res.setHeaders("Access-Control-Allow-Methods","GET,POST,PUT,DELETE");
 res.setHeaders("Access-Control-Allow-Headers","X-Requested-With, Content-type,Origin,Accept");
 next();
