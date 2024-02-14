@@ -21,7 +21,7 @@ mongoose
   .then(console.log("db is connected"));
 
 app.use(
-  cors({origin:'*'})
+  cors({origin:'https://e-store-roan.vercel.app'})
 );
 app.use(express.json());
 app.use("/products", productRoutes);
