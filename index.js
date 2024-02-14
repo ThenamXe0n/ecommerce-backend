@@ -21,14 +21,9 @@ mongoose
   .then(console.log("db is connected"));
 
 app.use(
-  cors()
+  cors(res.setHeaders("Access-Control-Allow-Origin","/(.*)");)
 );
-app.use((req,res,next)=>{
-res.setHeaders("Access-Control-Allow-Origin","/(.*)");
-res.setHeaders("Access-Control-Allow-Methods","GET,POST,PUT,DELETE");
-res.setHeaders("Access-Control-Allow-Headers","X-Requested-With, Content-type,Origin,Accept");
-next();
-})
+
 app.use(express.json());
 app.use("/products", productRoutes);
 app.use("/categories", categoriesRouter);
