@@ -23,6 +23,11 @@ mongoose
 app.use(
   cors({origin:'https://e-store-roan.vercel.app'})
 );
+app.use((req,res,next)=>{
+res.setHeaders("Access-Control-Allow-Methods","GET,POST,PUT,DELETE");
+res.setHeaders("Access-Control-Allow-Headers","X-Requested-With, Content-type,Origin,Accept");
+next();
+})
 app.use(express.json());
 app.use("/products", productRoutes);
 app.use("/categories", categoriesRouter);
